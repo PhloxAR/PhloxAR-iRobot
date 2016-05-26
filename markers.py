@@ -115,6 +115,27 @@ def get_vectors(image, points, mtx, dist):
 
     return rvecs, tvecs
 
+ROBOT = 'robot'
+MARKER_TABLE = [[[[0, 1, 0, 1, 0, 0, 0, 1, 1],[0, 0, 1, 1, 0, 1, 0, 1, 0],[1, 1, 0, 0, 0, 1, 0, 1, 0],[0, 1, 0, 1, 0, 1, 1, 0, 0]], ROCKY_ROBOT],[[[1, 0, 0, 0, 1, 0, 1, 0, 1],[0, 0, 1, 0, 1, 0, 1, 0, 1],[1, 0, 1, 0, 1, 0, 0, 0, 1],[1, 0, 1, 0, 1, 0, 1, 0, 0]], ROBOT]]
+
+
+def match_marker_pattern(marker_pattern):
+    found = False
+    rotation = None
+    name = None
+
+    for marker in MARKER_TABLE:
+        for idx, val in enumerate(marker[0]):
+            if marker_pattern == val:
+                found = True
+                rotation = idx
+                name = marker[1]
+                break
+        if found:
+            break
+
+    return found, rotation, name
+
 
 class Marker(object):
     QUADRILATERAL_POINTS = 4
