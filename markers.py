@@ -5,6 +5,7 @@ from __future__ import absolute_import, unicode_literals
 
 import cv2
 import numpy as np
+from constants import *
 
 
 def _order_points(points):
@@ -195,7 +196,7 @@ class Marker(object):
 
                 if found:
                     # Stage 8: Duplicate marker check
-                    if name in [marker[self.MARKER_NAME_INDEX] for marker in markers]
+                    if name in [marker[self.MARKER_NAME_INDEX] for marker in markers]:
                         continue
 
                     # Stage 9: Get rotation and translation vectors

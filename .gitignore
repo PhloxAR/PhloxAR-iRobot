@@ -58,8 +58,31 @@ docs/_build/
 # PyBuilder
 target/
 
-# Ipython Notebook
-.ipynb_checkpoints
+# Emacs Desktop
+.emacs.desktop
+.emacs.desktop.lock
 
-# Pycharm
-.idea/*
+# temp directory
+reserve/
+introduction.org
+paper/
+*/tmp/*
+
+# for now, unavailable
+examples/
+
+# distutils
+MANIFEST
+
+# PyCharm
+.idea/
+
+# Benchmark
+bench/
+trunk/
+*.pgm
+*.sift
+*.pkl
+*.jpg
+
+note
